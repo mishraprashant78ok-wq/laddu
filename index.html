@@ -1,0 +1,36 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body onclick="startMusic()">
+
+<div class="hearts"></div>
+<div class="golden-glow"></div>
+
+<audio id="bgMusic" loop>
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <div class="image_container">
+        <img src="pic1.jpg" alt="Photo">
+    </div>
+
+    <h1>Will you be my Valentine?</h1>
+
+    <div class="buttons">
+        <button class="yes-button" onclick="handleYesClick()">Yes</button>
+        <button class="no-button" onclick="handleNoClick()">No</button>
+    </div>
+
+    <div class="love-text" id="loveText"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

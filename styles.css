@@ -1,0 +1,149 @@
+ @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #ffe6ee, #ffd1dc);
+    font-family: "Nunito", sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Layout */
+.container {
+    text-align: center;
+    z-index: 3;
+}
+
+h1 {
+    font-size: 2.6em;
+    color: #c9184a;
+}
+
+.image_container img {
+    width: 280px;
+    max-width: 80vw;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+/* YES button */
+.yes-button {
+    background: linear-gradient(45deg, #ff4d6d, #ff758f);
+    color: white;
+    border: none;
+    font-size: 1.4em;
+    padding: 12px 26px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease;
+}
+
+.yes-button.glow {
+    box-shadow: 0 0 40px rgba(255,77,109,0.9);
+}
+
+/* NO button */
+.no-button {
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+}
+
+/* Cute NO animation */
+@keyframes shakeCute {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+    75% { transform: rotate(-6deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.no-button.cute {
+    animation: shakeCute 0.4s;
+    background: #ffb3c6;
+}
+
+/* Hearts */
+.hearts {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    width: 20px;
+    height: 20px;
+    background: #ff4d6d;
+    transform: rotate(45deg);
+    animation: rise 7s linear forwards;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4d6d;
+    border-radius: 50%;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes rise {
+    to { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+}
+
+/* Golden glow */
+.golden-glow {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,215,150,0.35), transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    z-index: 2;
+}
+
+.golden-glow.active {
+    opacity: 1;
+}
+
+/* Heartbeat */
+.heartbeat {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+/* Typing text */
+.love-text {
+    font-size: 2.2em;
+    color: #c9184a;
+    margin-top: 20px;
+    min-height: 1.2em;
+}
+
+ 
+ 
